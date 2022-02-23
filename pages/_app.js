@@ -3,7 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 
-import MUITheme from "../common/config/MUITheme";
+import MUITheme from "../config/MUITheme";
 import createEmotionCache from "../styles/createEmotionCache";
 import "../styles/globals.css";
 
