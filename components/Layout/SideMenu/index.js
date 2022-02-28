@@ -1,13 +1,13 @@
 import React from "react";
 import { Divider, Drawer, IconButton, Typography } from "@mui/material";
 import { ChevronRight, ChevronLeft } from "@mui/icons-material";
+import { makeStyles, useTheme } from "@mui/styles";
 
 import { topItems } from "../../../config/sidemenu";
 import { lightBlack, sideMenuDrawerWidth, topBarHeight } from "../../../config/constants";
 import { getTitle, shouldDisplayItem } from "./utils";
 import SideMenuList from "./SideMenuList";
 import SideMenuItem from "./SideMenuItem";
-import { makeStyles, useTheme } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
     drawer: {
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SideMenu = ({ hideDrawerButton = false, onClose, open }) => {
+function SideMenu({ hideDrawerButton = false, onClose, open }) {
     const classes = useStyles();
     const theme = useTheme();
 
@@ -98,6 +98,6 @@ const SideMenu = ({ hideDrawerButton = false, onClose, open }) => {
             </SideMenuList>
         </Drawer>
     );
-};
+}
 
 export default SideMenu;

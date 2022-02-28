@@ -9,7 +9,7 @@ import "../styles/globals.css";
 
 const clientSideEmotionCache = createEmotionCache();
 
-const MyApp = (props) => {
+function MyApp(props) {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
     return (
@@ -20,6 +20,6 @@ const MyApp = (props) => {
             </ThemeProvider>
         </CacheProvider>
     );
-};
+}
 
 export default MyApp;

@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const NEW = ({ tooltipMessage = "" }) => {
+function NEW({ tooltipMessage = "" }) {
     const classes = useStyles();
 
     return (
@@ -28,6 +28,6 @@ const NEW = ({ tooltipMessage = "" }) => {
             <Typography className={classes.NEW}>NEW</Typography>
         </Tooltip>
     );
-};
+}
 
 export default NEW;

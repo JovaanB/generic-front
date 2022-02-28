@@ -9,13 +9,15 @@ const useStyles = makeStyles({
     },
 });
 
-export const Image = ({ src, width = "auto", height = "300" }) => {
+const Image = ({ src, width = "auto", height = "300" }) => {
     const classes = useStyles();
     const isAmp = useAmp();
 
     return isAmp ? (
         <amp-img src={src} width={width} height={height} className={classes.img} />
     ) : (
-        <img src={src} width={width} height={height} className={classes.img} />
+        <img alt="" src={src} width={width} height={height} className={classes.img} />
     );
 };
+
+export default Image;

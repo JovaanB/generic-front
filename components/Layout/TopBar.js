@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { AppBar, Box, Toolbar, Avatar, Button } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ContactSupport, ExitToAppOutlined, Mail, Person } from "@mui/icons-material";
-import { Image } from "../Image";
+import Image from "../Image";
 import DropdownButton from "../DropdownButton";
 import { lightBlack, secondaryColor } from "../../config/constants";
 
@@ -42,15 +42,15 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const TopBar = () => {
+function TopBar() {
     const router = useRouter();
     const classes = useStyles();
-    const logo = "https://via.placeholder.com/90";
+    const logo = "https://via.placeholder.com/110";
     const initials = "JD";
 
     const helpComponent = React.forwardRef(({ ...rest }, ref) => (
         <Button ref={ref} {...rest} className={classes.helpComponent} endIcon={<ContactSupport />}>
-            Besoin d'aide
+            Besoin d&apos;aide
         </Button>
     ));
     const avatarComponent = React.forwardRef(({ ...rest }, ref) => (
@@ -99,6 +99,6 @@ const TopBar = () => {
             </AppBar>
         </Box>
     );
-};
+}
 
 export default TopBar;

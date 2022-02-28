@@ -15,14 +15,14 @@ import {
 } from "@mui/material";
 import { ArrowDropDownIcon } from "@mui/icons-material";
 
-const DropdownButton = ({
+function DropdownButton({
     actions,
     component: ButtonComponent = Button,
     noArrow = false,
     tooltipTitle = "",
     header,
     ...rest
-}) => {
+}) {
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
 
@@ -125,7 +125,7 @@ const DropdownButton = ({
             </Popper>
         </>
     );
-};
+}
 
 DropdownButton.propTypes = {
     actions: PropTypes.arrayOf(

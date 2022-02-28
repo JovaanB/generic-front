@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import clsx from "clsx";
 
-import SideMenu from "./SideMenu";
-import { lightBlack, sideMenuDrawerWidth, topBarHeight } from "../../config/constants";
-import TopBar from "./TopBar";
 import { Box, IconButton, NoSsr, useMediaQuery } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
+import SideMenu from "./SideMenu";
+import { lightBlack, sideMenuDrawerWidth, topBarHeight } from "../../config/constants";
+import TopBar from "./TopBar";
 
 const useStyles = makeStyles(() => ({
     hide: {
@@ -43,7 +43,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-const Layout = ({ monoColorBackground, hideMenu, title, children }) => {
+function Layout({ monoColorBackground, hideMenu, title, children }) {
     const [open, setOpen] = useState(true);
     const isMobile = useMediaQuery("(max-width:900px)");
     const classes = useStyles({ open });
@@ -83,6 +83,6 @@ const Layout = ({ monoColorBackground, hideMenu, title, children }) => {
             </div>
         </Box>
     );
-};
+}
 
 export default Layout;

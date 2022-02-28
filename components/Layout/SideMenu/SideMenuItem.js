@@ -6,11 +6,11 @@ import { useRouter } from "next/router";
 import { Collapse, Link as MuiLink, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 import { ArrowDropDown } from "@mui/icons-material";
 
+import { makeStyles } from "@mui/styles";
 import { grey } from "../../../config/constants";
 import { getPath, getTitle, isSelected, shouldDisplayItem } from "./utils";
 import SideMenuList from "./SideMenuList";
 import NEW from "../../New";
-import { makeStyles } from "@mui/styles";
 
 const itemPropType = PropTypes.shape({
     // eslint-disable-next-line react/forbid-prop-types
@@ -24,7 +24,7 @@ const itemPropType = PropTypes.shape({
     openOnExact: PropTypes.bool,
 });
 
-const Wrapper = ({ item, itemProps, children }) => {
+function Wrapper({ item, itemProps, children }) {
     const path = getPath(item, itemProps);
     if (path) {
         return (
@@ -35,7 +35,7 @@ const Wrapper = ({ item, itemProps, children }) => {
     }
 
     return children;
-};
+}
 
 Wrapper.propTypes = {
     item: itemPropType.isRequired,
@@ -78,7 +78,7 @@ const useStyles = makeStyles({
     },
 });
 
-const SideMenuItemInner = ({ item, itemProps, selected, onClick }) => {
+function SideMenuItemInner({ item, itemProps, selected, onClick }) {
     const classes = useStyles({ color: item.color, altColor: item.altColor });
 
     const additionalProps = item.additionalProps || {};
@@ -108,7 +108,7 @@ const SideMenuItemInner = ({ item, itemProps, selected, onClick }) => {
             </ListItem>
         </Wrapper>
     );
-};
+}
 
 SideMenuItemInner.propTypes = {
     item: itemPropType.isRequired,
@@ -122,7 +122,7 @@ SideMenuItemInner.defaultProps = {
     onClick: () => {},
 };
 
-const SideMenuItem = ({ item, itemProps, onClick }) => {
+function SideMenuItem({ item, itemProps, onClick }) {
     const router = useRouter();
     const [selected, selectedSubItemIndex] = isSelected(item, router);
     const openOnExact = item.openOnExact !== false;
@@ -175,7 +175,7 @@ const SideMenuItem = ({ item, itemProps, onClick }) => {
             )}
         </>
     );
-};
+}
 
 SideMenuItem.propTypes = {
     item: itemPropType.isRequired,

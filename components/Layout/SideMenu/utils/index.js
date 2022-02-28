@@ -26,13 +26,8 @@ const supportsCondition = (item, props) => {
     return true;
 };
 
-export const shouldDisplayItem = (item, props) => {
-    return (
-        supportsRole(item, props.userRole) &&
-        supportsCustomType(item, props.customType) &&
-        supportsCondition(item, props)
-    );
-};
+export const shouldDisplayItem = (item, props) =>
+    supportsRole(item, props.userRole) && supportsCustomType(item, props.customType) && supportsCondition(item, props);
 
 export const isSelected = (item, router) => {
     if (item.path && item.path === router.pathname) {

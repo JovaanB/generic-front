@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import Head from "next/head";
 import Layout from "../components/Layout";
 
-const Home = () => {
+function Home() {
     return (
         <Layout title="Sportintech">
             <div>
@@ -10,6 +10,6 @@ const Home = () => {
             </div>
         </Layout>
     );
-};
+}
 
 export default Home;
