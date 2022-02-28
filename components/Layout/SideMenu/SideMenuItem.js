@@ -24,7 +24,7 @@ const itemPropType = PropTypes.shape({
     openOnExact: PropTypes.bool,
 });
 
-function Wrapper({ item, itemProps, children }) {
+const Wrapper = ({ item, itemProps, children }) => {
     const path = getPath(item, itemProps);
     if (path) {
         return (
@@ -35,7 +35,7 @@ function Wrapper({ item, itemProps, children }) {
     }
 
     return children;
-}
+};
 
 Wrapper.propTypes = {
     item: itemPropType.isRequired,
@@ -78,7 +78,7 @@ const useStyles = makeStyles({
     },
 });
 
-function SideMenuItemInner({ item, itemProps, selected, onClick }) {
+const SideMenuItemInner = ({ item, itemProps, selected, onClick }) => {
     const classes = useStyles({ color: item.color, altColor: item.altColor });
 
     const additionalProps = item.additionalProps || {};
@@ -108,7 +108,7 @@ function SideMenuItemInner({ item, itemProps, selected, onClick }) {
             </ListItem>
         </Wrapper>
     );
-}
+};
 
 SideMenuItemInner.propTypes = {
     item: itemPropType.isRequired,
@@ -122,7 +122,7 @@ SideMenuItemInner.defaultProps = {
     onClick: () => {},
 };
 
-function SideMenuItem({ item, itemProps, onClick }) {
+const SideMenuItem = ({ item, itemProps, onClick }) => {
     const router = useRouter();
     const [selected, selectedSubItemIndex] = isSelected(item, router);
     const openOnExact = item.openOnExact !== false;
@@ -130,7 +130,7 @@ function SideMenuItem({ item, itemProps, onClick }) {
         ((openOnExact || selectedSubItemIndex >= 0) && selected) || item.openOnPath?.includes(router.pathname)
     );
 
-    function handleParentClick(event) {
+    const handleParentClick = (event) => {
         // If SideMenuItem receives a direct `onClick` prop, call it in priority
         if (typeof onClick === "function") {
             onClick(event);
@@ -145,7 +145,7 @@ function SideMenuItem({ item, itemProps, onClick }) {
         if (item.items && !item.path) {
             setOpen((prevOpen) => !prevOpen);
         }
-    }
+    };
 
     return (
         <>
@@ -175,7 +175,7 @@ function SideMenuItem({ item, itemProps, onClick }) {
             )}
         </>
     );
-}
+};
 
 SideMenuItem.propTypes = {
     item: itemPropType.isRequired,

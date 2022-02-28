@@ -1,15 +1,12 @@
 import { Typography } from "@mui/material";
-import Head from "next/head";
 import Layout from "../components/Layout";
 
-function Home() {
-    return (
-        <Layout title="Sportintech">
-            <div>
-                <Typography variant="h1">SportinTech</Typography>
-            </div>
-        </Layout>
-    );
-}
+const Home = () => (
+    <Layout title="Sportintech">
+        <div>
+            <Typography variant="h1">SportinTech</Typography>
+        </div>
+    </Layout>
+);
 
 export default Home;

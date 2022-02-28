@@ -56,11 +56,11 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function SideMenu({ hideDrawerButton = false, onClose, open }) {
+const SideMenu = ({ hideDrawerButton = false, onClose, open }) => {
     const classes = useStyles();
     const theme = useTheme();
 
-    const logoUrl = "https://via.placeholder.com/100";
+    const logoUrl = "https://via.placeholder.com/120";
 
     const itemProps = {
         logout: () => {
@@ -98,6 +98,6 @@ function SideMenu({ hideDrawerButton = false, onClose, open }) {
             </SideMenuList>
         </Drawer>
     );
-}
+};
 
 export default SideMenu;

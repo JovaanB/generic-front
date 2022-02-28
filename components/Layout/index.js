@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
         color: lightBlack,
         top: 8,
         left: 100,
-        zIndex: 99999,
+        zIndex: 9999,
     },
     children: {
         paddingLeft: 24,
@@ -37,13 +37,13 @@ const useStyles = makeStyles(() => ({
         left: 0,
         top: 0,
         paddingTop: topBarHeight,
-        paddingBottom: 32,
+        paddingBottom: 30,
         right: 0,
         marginLeft: ({ open }) => (open ? sideMenuDrawerWidth : 0),
     },
 }));
 
-function Layout({ monoColorBackground, hideMenu, title, children }) {
+const Layout = ({ monoColorBackground, hideMenu, title, children }) => {
     const [open, setOpen] = useState(true);
     const isMobile = useMediaQuery("(max-width:900px)");
     const classes = useStyles({ open });
@@ -83,6 +83,6 @@ function Layout({ monoColorBackground, hideMenu, title, children }) {
             </div>
         </Box>
     );
-}
+};
 
 export default Layout;

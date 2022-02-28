@@ -42,10 +42,10 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-function TopBar() {
+const TopBar = () => {
     const router = useRouter();
     const classes = useStyles();
-    const logo = "https://via.placeholder.com/110";
+    const logo = "https://via.placeholder.com/100";
     const initials = "JD";
 
     const helpComponent = React.forwardRef(({ ...rest }, ref) => (
@@ -99,6 +99,6 @@ function TopBar() {
             </AppBar>
         </Box>
     );
-}
+};
 
 export default TopBar;

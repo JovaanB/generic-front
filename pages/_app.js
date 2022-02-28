@@ -9,17 +9,13 @@ import "../styles/globals.css";
 
 const clientSideEmotionCache = createEmotionCache();
 
-function MyApp(props) {
-    const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
-    return (
-        <CacheProvider value={emotionCache}>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <Component {...pageProps} />
-            </ThemeProvider>
-        </CacheProvider>
-    );
-}
+const MyApp = ({ Component, emotionCache = clientSideEmotionCache, pageProps }) => (
+    <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Component {...pageProps} />
+        </ThemeProvider>
+    </CacheProvider>
+);
 
 export default MyApp;
