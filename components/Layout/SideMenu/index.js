@@ -60,7 +60,7 @@ const SideMenu = ({ hideDrawerButton = false, onClose, open }) => {
     const classes = useStyles();
     const theme = useTheme();
 
-    const logoUrl = "https://via.placeholder.com/120";
+    const logo = "https://via.placeholder.com/120";
 
     const itemProps = {
         logout: () => {
@@ -82,7 +82,7 @@ const SideMenu = ({ hideDrawerButton = false, onClose, open }) => {
                         {theme.direction === "rtl" ? <ChevronRight /> : <ChevronLeft />}
                     </IconButton>
                 )}
-                <img src={logoUrl} height={71} width={61} className={classes.logo} alt="logo du club" />
+                <img src={logo} height={71} width={61} className={classes.logo} alt="logo du club" />
 
                 <Typography className={classes.welcome}>Bienvenue</Typography>
             </div>
