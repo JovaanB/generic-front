@@ -1,22 +1,20 @@
-import Head from "next/head";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
+import React from "react";
 import { CacheProvider } from "@emotion/react";
+import { CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/styles";
 
-import MUITheme from "../config/MUITheme";
 import createEmotionCache from "../styles/createEmotionCache";
+import theme from "../config/MUITheme";
 import "../styles/globals.css";
 
 const clientSideEmotionCache = createEmotionCache();
 
-const MyApp = ({ Component, emotionCache = clientSideEmotionCache, pageProps }) => {
+const MyApp = (props) => {
+    const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
+
     return (
         <CacheProvider value={emotionCache}>
-            <Head>
-                <title>SportinTech</title>
-                <meta name="viewport" content="initial-scale=1, width=device-width" />
-            </Head>
-            <ThemeProvider theme={MUITheme}>
+            <ThemeProvider theme={theme}>
                 <CssBaseline />
                 <Component {...pageProps} />
             </ThemeProvider>
