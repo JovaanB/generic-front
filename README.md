@@ -3,3 +3,7 @@
 1. Dans le terminal : yarn
 2. Changer l'url des logos - dans TopBar et SideMenu on a les constantes "logo"
 3. Si besoin changer les couleurs du thème Material UI dans config/MUITheme
+
+## À savoir
+
+-   Fenêtre de Dialog générique => components/CustomDialog
