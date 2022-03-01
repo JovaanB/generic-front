@@ -5,7 +5,6 @@ import { ThemeProvider } from "@mui/styles";
 
 import createEmotionCache from "../styles/createEmotionCache";
 import theme from "../config/MUITheme";
-import "../styles/globals.css";
 
 const clientSideEmotionCache = createEmotionCache();
 

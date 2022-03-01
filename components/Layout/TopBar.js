@@ -45,7 +45,7 @@ const useStyles = makeStyles(() => ({
 const TopBar = () => {
     const router = useRouter();
     const classes = useStyles();
-    const logo = "https://via.placeholder.com/100";
+    const logo = "https://via.placeholder.com/110";
     const initials = "JD";
 
     const helpComponent = React.forwardRef(({ ...rest }, ref) => (

@@ -60,7 +60,7 @@ const SideMenu = ({ hideDrawerButton = false, onClose, open }) => {
     const classes = useStyles();
     const theme = useTheme();
 
-    const logo = "https://via.placeholder.com/120";
+    const logo = "https://via.placeholder.com/110";
 
     const itemProps = {
         logout: () => {
